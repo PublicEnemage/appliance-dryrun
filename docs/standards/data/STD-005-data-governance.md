@@ -14,10 +14,11 @@ approved_at: null
 
 - **Kind:** craft standard
 - **Owning seat:** Operator, who owns the classification rule (floor row C5)
-- **Applies to:** all data the system stores, processes or exports
+- **Applies to:** all data the system stores, processes or exports. For Shelf: member
+  contact details, tool listings, loan history, and reminder delivery records
 
-A draft default. Adapt the clauses at bootstrap, then challenge and approve this file.
-A rejection must cite a clause number.
+Adapted for Shelf at bootstrap (2026-10-01). Still a draft: a challenger reviews it and
+the Engineering Lead approves it (floor row D11). A rejection must cite a clause number.
 
 ## Clauses
 
@@ -35,3 +36,22 @@ A rejection must cite a clause number.
    when and why, and is kept for the audit period.
 6. **Agents get least privilege.** No agent seat holds credentials to production data it
    does not need for its charter.
+
+## Shelf notes
+
+Proposed classes, to be confirmed by the risk assessment (floor row C5):
+
+| Data | Proposed class | Why |
+| --- | --- | --- |
+| Member name, email, phone, address | confidential | Personal information of private people |
+| Loan history (who borrowed what, when) | confidential | Shows a member's presence at home and what they own |
+| Tool listings | internal | Visible to members, not to the public |
+| Reminder delivery records | confidential | Carry contact details |
+
+No data is classed regulated unless discovery adds money handling, such as deposits or
+late fees. If it does, the grade and the Data Architect decision are reopened.
+
+- Clause 3: a member who leaves is deleted or anonymised. A loan still out when the member
+  leaves is resolved by the coordinator first. The retention period comes from the NFR.
+- Clause 5: the coordinator view of member contact details is access to confidential data,
+  so it is logged. The log can be simple at the light grade, but it exists.

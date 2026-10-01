@@ -15,10 +15,11 @@ approved_at: null
 - **Kind:** craft standard
 - **Owning seat:** Architect owns this standard; each reference dataset names its owner
 - **Applies to:** lookup tables, code lists, configuration data, and the seed data each
-  environment starts with
+  environment starts with. For Shelf: tool categories, the default loan period, the
+  reminder schedule (days before and after the due date), and library settings
 
-A draft default. Adapt the clauses at bootstrap, then challenge and approve this file.
-A rejection must cite a clause number.
+Adapted for Shelf at bootstrap (2026-10-01). Still a draft: a challenger reviews it and
+the Engineering Lead approves it (floor row D11). A rejection must cite a clause number.
 
 ## Clauses
 
@@ -33,3 +34,12 @@ A rejection must cite a clause number.
    connection check while the database was under-seeded.)
 5. **Test seeds are synthetic.** No production personal data is used as seed data in any
    non-production environment.
+
+## Shelf notes
+
+- Proposed owners, confirmed when the datasets are named in the architecture: tool
+  categories and the default loan period, Product; the reminder schedule, Product, with
+  Operator approving any change that alters send volume or cost.
+- Clause 5 matters more than usual. A library's first members are neighbours, and a
+  test seed copied from a real sign-up sheet would expose them. Seeds use invented
+  names, invented addresses and reserved test email domains.

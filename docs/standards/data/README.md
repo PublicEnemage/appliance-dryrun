@@ -34,3 +34,20 @@ already chartered in `docs/roles.yml` under `optional_seats`. Open a role propos
 
 WorldSIM adopted its Data Architect after a schema guess shipped (NM-003, NM-011). These
 triggers are meant to raise the question before that point.
+
+## Shelf decision at bootstrap (2026-10-01)
+
+No Data Architect seat now. The Architect owns the data layer, and the Builder is its
+qualified challenger. Against the triggers above:
+
+1. Stores and contracts: one database is expected, and the likely contracts number three
+   or fewer (STD-002 notes). Not met.
+2. Regulated data: none proposed (STD-005 notes). Not met, unless discovery adds money
+   handling such as deposits or late fees.
+3. External datasets central to value: none. Not met.
+4. Registry entries on schema, contract or seed data: none yet. Not met.
+5. Data layer without a second qualified challenger: the Builder is qualified. Not met.
+
+Reopen this decision when any trigger is met, or when the risk assessment classes any
+dataset regulated. All five standards are adapted, none is marked not-applicable; each
+is tracked by its own row under D11 in `docs/dor/checklist.yml`.

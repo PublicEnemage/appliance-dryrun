@@ -15,10 +15,11 @@ approved_at: null
 - **Kind:** input contract between components
 - **Owning seat:** Architect owns this standard; each contract is owned by its producer
 - **Applies to:** every exchange between components: API calls, events, messages, files,
-  and tables one component writes and another reads
+  and tables one component writes and another reads.
+  For Shelf, likely candidates are named in the notes below; the architecture decides
 
-A draft default. Adapt the clauses at bootstrap, then challenge and approve this file.
-A rejection must cite a clause number.
+Adapted for Shelf at bootstrap (2026-10-01). Still a draft: a challenger reviews it and
+the Engineering Lead approves it (floor row D11). A rejection must cite a clause number.
 
 ## Clauses
 
@@ -39,6 +40,19 @@ A rejection must cite a clause number.
    stated deprecation window. Each consumer moves to the new version in its own story.
 6. **The producer owns the contract.** Consumers propose changes. The producer's seat
    authors the change, and a consumer's seat challenges it.
+
+## Shelf notes
+
+These exchanges are expected. The architecture's integration section confirms or drops
+each one (floor row D12):
+
+- The reminder job reads due and overdue loans (`table` or `api`).
+- The reminder job hands a message to the email or SMS provider (`api`), and reads back
+  a delivery result, so a failed reminder is visible (principle 3).
+- The coordinator view reads loan status (`api`, if the frontend is separate from the server).
+
+A server-rendered page that reads its own tables is not an exchange between components.
+The Architect states the boundary in the architecture.
 
 ## Contract file shape
 

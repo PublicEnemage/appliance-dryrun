@@ -31,6 +31,11 @@ rows:
   D9: {status: open}
   D10: {status: open}
   D11: {status: open}
+  D11.1: {status: open, rule: "STD-001 schema change policy is approved, adapted for Shelf"}
+  D11.2: {status: open, rule: "STD-002 data contracts is approved, adapted for Shelf"}
+  D11.3: {status: open, rule: "STD-003 data quality is approved, adapted for Shelf"}
+  D11.4: {status: open, rule: "STD-004 reference and seed data is approved, adapted for Shelf"}
+  D11.5: {status: open, rule: "STD-005 data governance is approved, adapted for Shelf"}
   D12: {status: open}
   D13: {status: open}
   # plan
