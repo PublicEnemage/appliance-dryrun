@@ -17,7 +17,9 @@ seats:
   Product:
     kind: agent
     concern: Who uses this, and for what?
-    qualified_layers: []
+    # Shelf: authors the domain core, the loan lifecycle (list, borrow, due, overdue,
+    # return) and the reminder rules, from the use cases.
+    qualified_layers: [domain-core]
   Delivery:
     kind: agent
     concern: Is the work cut, ordered and flowing well?
@@ -33,7 +35,9 @@ seats:
   Verifier:
     kind: agent
     concern: Does it do what the artifacts say?
-    qualified_layers: [deployment-runtime, operations]
+    # Shelf: challenges the domain core, which is mostly loan states and reminder timing
+    # (floor rows D7, D8).
+    qualified_layers: [domain-core, deployment-runtime, operations]
   Builder:
     kind: agent
     concern: Code, pipeline code and implementation design
@@ -58,12 +62,16 @@ optional_seats:
     owns: [docs/standards/data/, contracts/, migrations]
     adopt_when: docs/standards/data/README.md#when-to-adopt-a-data-architect-seat
 
-# domain-core is listed by no seat on purpose. Each project names the seat that holds
-# its domain expertise here, or the D6 check fails and a crew review opens.
-qualified_domains: {}
-# Example once a domain seat exists:
-# qualified_domains:
-#   airspace-rules: [Domain Advisor]
+# Shelf bootstrap: domain-core is held by Product (author) and Verifier (challenger).
+# Shelf's other layers keep the template charters: a small web app with reminders uses
+# all of them, and no evidence yet justifies narrowing one.
+#
+# Domain areas the business case may name (floor row C8), with the seats that can
+# challenge them. The business case is authored by Product and challenged by Verifier.
+# No agent seat has first-hand tool-library practice. The counter-perspective is the
+# volunteer coordinator's, gathered as discovery evidence (floor row C9), not a seat.
+qualified_domains:
+  tool-lending-operations: [Verifier]
 
 # Pairs that may never sit on one holder. These seats challenge each other's work,
 # so one agent holding both would be marking its own work.
