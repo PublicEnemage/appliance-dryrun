@@ -32,8 +32,13 @@ Bootstrap (`BOOTSTRAP.md` step 4) is done on branch `bootstrap`, not pushed:
    `docs/roles.yml`. Focus rows: C6, C8, D6, D11. The challenger must not be the Architect
    or Operator, the declared authors of the data standards; Verifier fits.
 2. Step 6: the Engineering Lead reads the challenge and `DRYRUN-QUESTIONS.md`, then merges.
-3. Step 7: `git config core.hooksPath .githooks`.
-4. Step 8: smoke cycle. Not run.
+3. Step 7: done 2026-10-01 on branch `smoke`. Note: the setting lands in the shared repo
+   config, so it applies to every worktree (`SMOKE-RESULTS.md` note 2).
+4. Step 8: smoke cycle run 2026-10-01 on branch `smoke`, ahead of steps 5 and 6. All eight
+   checks refused (E10, SEATS, DOR, E3, E11, E14, E15, E16). The pre-push hook blocked.
+   E15 refused only with an explicit base ref. Details and 11 notes: `SMOKE-RESULTS.md`.
+   Not yet seen: CI and branch protection refusing. Carry this record to `bootstrap`
+   before the `smoke` branch is discarded.
 5. Step 9: discovery track. Not started.
 
 ## Open decisions
